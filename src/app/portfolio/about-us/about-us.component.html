@@ -1,0 +1,11 @@
+<div class="form-container">
+    <p>Template-driven </p>
+
+   <form #userForm = 'ngForm'>
+    <label for="name">Name : </label>
+    <input type="text" name="name" placeholder="Enter Your Name : " ngModel>
+    <label for="Email">Email : </label>
+    <input type="email" name="email" placeholder="Enter Your Email : " ngModel>
+    <button (click)="onSubmit(userForm)">Submit</button>
+   </form>
+</div>
