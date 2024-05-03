@@ -12,4 +12,29 @@ export class AboutUsComponent {
   onSubmit(form : any){
     console.log("Form is Submitted!",form.value.name);
   }
+
+  constructor(){
+    console.log("constructor");
+  }
+  ngOnInit(){
+    console.log("ngOnInit")
+    
+  }
+  ngDoCheck() {
+    console.log("ngDoCheck");
+    
+  }
+  ngAfterContentInit() {
+     console.log('ngAfterContentInit');
+  }
+  ngAfterContentChecked() {
+    console.log('ngAfterContentChecked');
+    
+  }
+  ngAfterViewInit(){
+    console.log('ngAfterViewInit'); 
+  }
+  ngOnDestroy(){
+   console.log('ngOnDestroy');
+  }
 }
