@@ -1,0 +1,10 @@
+.form-group{
+    .before-property::before{
+        content: '*';
+        position: absolute;
+        left: -2%;
+        top: 10%;
+        color: red;
+        font-size: 2vw;
+    }
+}
