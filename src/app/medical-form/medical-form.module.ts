@@ -8,7 +8,7 @@ import { MedicalFormRoutingModule } from './medical-form-routing.module';
   declarations: [],
   imports: [
     CommonModule,
-    MedicalFormRoutingModule,
+    MedicalFormRoutingModule
   ]
 })
 export class MedicalFormModule { }
