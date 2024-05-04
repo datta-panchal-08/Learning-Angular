@@ -42,5 +42,17 @@ export class EvaluationComponent {
 
     }
   }
+  submit(){
 
+  }
+  handleSubmit(event : any){
+    console.log('Submitted....',event);
+    
+     if(event.ctrlKey){
+      console.log('ctrl Key Pressed');
+     }else{
+      console.log('Normal...');
+      
+     }
+  }
 }
