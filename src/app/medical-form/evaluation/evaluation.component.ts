@@ -13,13 +13,20 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 })
 export class EvaluationComponent {
   medicalForm: any;
+  selectedGender : any;
   constructor(private formBuilder:
      FormBuilder) {
 
   }
 
   ngOnInit() {
-    this.initializeForm()
+    this.initializeForm();
+    this.medicalForm.get('gender').valueChanges.subscribe((value  : string)=>{
+      this.selectedGender = value;
+      console.log('selectedGender : ',this.selectedGender);
+      
+    })
+
   }
 
   initializeForm() {
@@ -55,4 +62,12 @@ export class EvaluationComponent {
       
      }
   }
+
+  onGenderChange(event : any){
+     console.log('changed...',event);
+     console.log('changed...',event.target);
+     console.log('changed...',event.target.value);
+     this.selectedGender = event.target.value;
+  }
+
 }
