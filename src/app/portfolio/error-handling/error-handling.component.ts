@@ -1,15 +1,25 @@
 import { Component } from '@angular/core';
+import { UserService } from '../../user.service';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-error-handling',
   standalone: true,
-  imports: [],
+  imports: [CommonModule],
   templateUrl: './error-handling.component.html',
   styleUrl: './error-handling.component.scss'
 })
 export class ErrorHandlingComponent {
-    constructor(){
-      this.errorHandling();
+   data : any;
+   users : any;
+    constructor(public userService:UserService){
+      // this.errorHandling();
+      this.data = this.userService.getData();
+      console.log(this.data);
+      this.users = this.userService.getUsers();
+      console.log('users.....',this.users);
+      
+      
     }
     sampleError(){
      let x : number = null!;
@@ -23,7 +33,7 @@ export class ErrorHandlingComponent {
         console.log("Result",result);
         
       } catch (error : any) {
-        console.error("Type Error : ",error.message);
+        console.error("Type Error  : ",error.message);
         
       }finally{
         console.log('Finally');
