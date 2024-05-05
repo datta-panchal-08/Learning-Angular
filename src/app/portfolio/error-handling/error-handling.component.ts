@@ -12,15 +12,24 @@ import { CommonModule } from '@angular/common';
 export class ErrorHandlingComponent {
    data : any;
    users : any;
+   observeData : any;
+   fechData  : any;
     constructor(public userService:UserService){
       // this.errorHandling();
       this.data = this.userService.getData();
       console.log(this.data);
       this.users = this.userService.getUsers();
-      console.log('users.....',this.users);
-      
-      
+      console.log('users.....',this.users); 
     }
+    
+   async ngOnInit(){
+          this.fechData = await this.userService.fetchData();
+          console.log("Result : ",this.fechData);
+          
+          this.observeData = this.userService.observedData();
+          console.log('observed Data',this.observeData)
+    }
+
     sampleError(){
      let x : number = null!;
      console.log("Sample ",x);
