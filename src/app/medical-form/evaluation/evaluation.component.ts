@@ -21,6 +21,35 @@ export class EvaluationComponent {
 
   ngOnInit() {
     this.initializeForm();
+
+
+   const formData = {
+      name : "John Doe",
+      age : 30,
+      gender  : "male",
+      address : "123 main street",
+      diagnosis  : "Headache",
+      contact : "1234456782",
+      email : "john@example.com",
+      personalHistory : "none",
+      familyHistory : "none",
+      painScore :5
+    }
+
+    // PATCH VALUES
+
+    // this.medicalForm.patchValue({
+    //   name : formData.name,
+    //   address : formData.address,
+    //   gender : formData.gender,
+    //   age : formData.age,
+    //   diagnosis : formData.diagnosis,
+    //   contact : formData.contact,
+    //   email : formData.email,
+    // });
+    // SET VALUES
+    this.medicalForm.setValue(formData);
+
     this.medicalForm.get('gender').valueChanges.subscribe((value  : string)=>{
       this.selectedGender = value;
       console.log('selectedGender : ',this.selectedGender);
@@ -28,6 +57,8 @@ export class EvaluationComponent {
     })
 
   }
+
+  
 
   initializeForm() {
     this.medicalForm = this.formBuilder.group({
